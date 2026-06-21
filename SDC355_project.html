@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Haynes Portfolio</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        section {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Jonathan Haynes</h1>
+        <h2 id="welcomeMessage">Welcome to my portfolio!</h2>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+
+        <p>
+            Hello! My name is Jonathan Haynes. I am currently studying software
+            development and enjoy learning about web development, Java programming,
+            databases, and user experience design.
+        </p>
+
+        <p>
+            My goal is to become a well-rounded software developer by building
+            practical projects and continuing to expand my programming skills.
+        </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <p>Here are a few of my GitHub projects.</p>
+
+        <!-- Replace the # with your GitHub project links -->
+        <a href="#" target="_blank">
+            <img src="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvia.placeholder.com%2F200x120%3Ftext%3DProject%2B1&data=05%7C02%7C%7C71336e639a9a4aeda8d408decee1d696%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639175666538412687%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=auCBJt7hbZpFf%2BcqRC44YGjQOfogtoMt5TJrgbW1hHM%3D&reserved=0"
+                 alt="Project 1">
+        </a>
+
+        <a href="#" target="_blank">
+            <img src="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvia.placeholder.com%2F200x120%3Ftext%3DProject%2B2&data=05%7C02%7C%7C71336e639a9a4aeda8d408decee1d696%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639175666538434367%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=%2Bd%2FMM93z6Xt1q4nxG6XRZ324fSXlBCfHZWOVGFPjMrQ%3D&reserved=0"
+                 alt="Project 2">
+        </a>
+
+        <a href="#" target="_blank">
+            <img src="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvia.placeholder.com%2F200x120%3Ftext%3DProject%2B3&data=05%7C02%7C%7C71336e639a9a4aeda8d408decee1d696%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639175666538446911%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=cLGt0jDWMD8JgECqyvOkB0uaTX2bWWg%2BDhvH3HZZc6U%3D&reserved=0"
+                 alt="Project 3">
+        </a>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <form>
+
+            <label>Name</label>
+            <input type="text" name="name" required>
+
+            <label>Email Address</label>
+            <input type="email" name="email" required>
+
+            <label>Subject</label>
+            <input type="text" name="subject" required>
+
+            <label>Message</label>
+            <textarea rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+
+        // Ask the visitor for their name
+        let userName = prompt("Welcome! What is your name?");
+
+        // If the user enters a name, personalize the welcome message
+        if (userName && userName.trim() !== "") {
+            document.getElementById("welcomeMessage").innerHTML =
+                "Welcome, " + userName + "! Thanks for visiting my portfolio.";
+        }
+
+    </script>
+
+</body>
+</html>
