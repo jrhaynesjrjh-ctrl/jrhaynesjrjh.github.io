@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jonathan Haynes Portfolio</title>
 
+    <!-- ============================
+         INTERNAL CSS STYLING
+         ============================ -->
     <style>
+        /* Global page styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f4f4f4;
         }
 
+        /* Header section */
         header {
             background-color: #333;
             color: white;
@@ -19,12 +24,14 @@
             padding: 20px;
         }
 
+        /* Navigation bar */
         nav {
             background-color: #555;
             padding: 10px;
             text-align: center;
         }
 
+        /* Navigation links */
         nav a {
             color: white;
             text-decoration: none;
@@ -32,6 +39,7 @@
             font-weight: bold;
         }
 
+        /* Content sections */
         section {
             background: white;
             margin: 20px;
@@ -39,12 +47,14 @@
             border-radius: 8px;
         }
 
+        /* Project images */
         img {
             width: 200px;
             margin: 10px;
             border-radius: 5px;
         }
 
+        /* Form styling */
         form input,
         form textarea {
             width: 100%;
@@ -53,6 +63,7 @@
             margin-bottom: 15px;
         }
 
+        /* Buttons */
         button {
             padding: 10px 20px;
             background-color: #333;
@@ -69,19 +80,26 @@
 
 <body>
 
+    <!-- ============================
+         HEADER SECTION
+         ============================ -->
     <header>
         <h1>Jonathan Haynes</h1>
         <h2 id="welcomeMessage">Welcome to my portfolio!</h2>
     </header>
 
-    <!-- Navigation Menu -->
+    <!-- ============================
+         NAVIGATION MENU
+         ============================ -->
     <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- About Section -->
+    <!-- ============================
+         ABOUT SECTION
+         ============================ -->
     <section id="about">
         <h2>About Me</h2>
 
@@ -97,36 +115,35 @@
         </p>
     </section>
 
-    <!-- Projects Section -->
+    <!-- ============================
+         PROJECTS SECTION
+         ============================ -->
     <section id="projects">
         <h2>Projects</h2>
 
         <p>Here are a few of my GitHub projects.</p>
 
-        <!-- Replace the # with your GitHub project links -->
+        <!-- Replace # with actual GitHub project links -->
         <a href="#" target="_blank">
-            <img src="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvia.placeholder.com%2F200x120%3Ftext%3DProject%2B1&data=05%7C02%7C%7C71336e639a9a4aeda8d408decee1d696%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639175666538412687%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=auCBJt7hbZpFf%2BcqRC44YGjQOfogtoMt5TJrgbW1hHM%3D&reserved=0"
-                 alt="Project 1">
+            <img src="https://via.placeholder.com/200x120?text=Project+1" alt="Project 1">
         </a>
 
         <a href="#" target="_blank">
-            <img src="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvia.placeholder.com%2F200x120%3Ftext%3DProject%2B2&data=05%7C02%7C%7C71336e639a9a4aeda8d408decee1d696%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639175666538434367%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=%2Bd%2FMM93z6Xt1q4nxG6XRZ324fSXlBCfHZWOVGFPjMrQ%3D&reserved=0"
-                 alt="Project 2">
+            <img src="https://via.placeholder.com/200x120?text=Project+2" alt="Project 2">
         </a>
 
         <a href="#" target="_blank">
-            <img src="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvia.placeholder.com%2F200x120%3Ftext%3DProject%2B3&data=05%7C02%7C%7C71336e639a9a4aeda8d408decee1d696%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639175666538446911%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=cLGt0jDWMD8JgECqyvOkB0uaTX2bWWg%2BDhvH3HZZc6U%3D&reserved=0"
-                 alt="Project 3">
+            <img src="https://via.placeholder.com/200x120?text=Project+3" alt="Project 3">
         </a>
-
     </section>
 
-    <!-- Contact Section -->
+    <!-- ============================
+         CONTACT SECTION
+         ============================ -->
     <section id="contact">
         <h2>Contact Me</h2>
 
         <form>
-
             <label>Name</label>
             <input type="text" name="name" required>
 
@@ -140,23 +157,21 @@
             <textarea rows="5" required></textarea>
 
             <button type="submit">Submit</button>
-
         </form>
-
     </section>
 
-    <!-- JavaScript -->
+    <!-- ============================
+         JAVASCRIPT SECTION
+         ============================ -->
     <script>
-
-        // Ask the visitor for their name
+        // Ask the visitor for their name when the page loads
         let userName = prompt("Welcome! What is your name?");
 
-        // If the user enters a name, personalize the welcome message
+        // If the user enters a valid name, update the welcome message
         if (userName && userName.trim() !== "") {
             document.getElementById("welcomeMessage").innerHTML =
                 "Welcome, " + userName + "! Thanks for visiting my portfolio.";
         }
-
     </script>
 
 </body>
