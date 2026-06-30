@@ -10,6 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f4f4f4;
+            color: #222;
         }
 
         header {
@@ -64,12 +65,36 @@
         button:hover {
             background-color: #555;
         }
+
+        /* Featured Content Styling */
+        .featured-box {
+            background: #e8f0ff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        /* Dark Mode Styling */
+        .dark-mode {
+            background-color: #121212;
+            color: #f1f1f1;
+        }
+
+        .dark-mode header {
+            background-color: #000;
+        }
     </style>
 </head>
 
 <body>
 
     <header>
+        <!-- Dark Mode Toggle -->
+        <label>
+            <input type="checkbox" id="darkModeToggle">
+            Dark Mode
+        </label>
+
         <h1>Jonathan Haynes</h1>
         <h2 id="welcomeMessage">Welcome to my portfolio!</h2>
     </header>
@@ -95,6 +120,27 @@
             My goal is to become a well-rounded software developer by building
             practical projects and continuing to expand my programming skills.
         </p>
+
+        <!-- Skills List (Week 2) -->
+        <h3>My Skills</h3>
+        <ul id="skillsList"></ul>
+    </section>
+
+    <!-- Featured Content Section (Week 2) -->
+    <section id="featured">
+        <h2>Featured Content</h2>
+
+        <div id="universityResources" class="featured-box">
+            <h3>University Resources</h3>
+            <a href="https://www.ecpi.edu" target="_blank">ECPI Homepage</a>
+        </div>
+
+        <div id="personalProjects" class="featured-box">
+            <h3>Personal Projects</h3>
+            <a href="#" target="_blank">
+                <img src="https://via.placeholder.com/150" alt="GitHub Project">
+            </a>
+        </div>
     </section>
 
     <!-- Projects Section -->
@@ -103,20 +149,16 @@
 
         <p>Here are a few of my GitHub projects.</p>
 
-        <!-- Replace the # with your GitHub project links -->
         <a href="#" target="_blank">
-            <img src="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvia.placeholder.com%2F200x120%3Ftext%3DProject%2B1&data=05%7C02%7C%7C71336e639a9a4aeda8d408decee1d696%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639175666538412687%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=auCBJt7hbZpFf%2BcqRC44YGjQOfogtoMt5TJrgbW1hHM%3D&reserved=0"
-                 alt="Project 1">
+            <img src="https://via.placeholder.com/200x120?text=Project+1" alt="Project 1">
         </a>
 
         <a href="#" target="_blank">
-            <img src="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvia.placeholder.com%2F200x120%3Ftext%3DProject%2B2&data=05%7C02%7C%7C71336e639a9a4aeda8d408decee1d696%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639175666538434367%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=%2Bd%2FMM93z6Xt1q4nxG6XRZ324fSXlBCfHZWOVGFPjMrQ%3D&reserved=0"
-                 alt="Project 2">
+            <img src="https://via.placeholder.com/200x120?text=Project+2" alt="Project 2">
         </a>
 
         <a href="#" target="_blank">
-            <img src="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvia.placeholder.com%2F200x120%3Ftext%3DProject%2B3&data=05%7C02%7C%7C71336e639a9a4aeda8d408decee1d696%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639175666538446911%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=cLGt0jDWMD8JgECqyvOkB0uaTX2bWWg%2BDhvH3HZZc6U%3D&reserved=0"
-                 alt="Project 3">
+            <img src="https://via.placeholder.com/200x120?text=Project+3" alt="Project 3">
         </a>
 
     </section>
@@ -125,7 +167,7 @@
     <section id="contact">
         <h2>Contact Me</h2>
 
-        <form>
+        <form id="contactForm">
 
             <label>Name</label>
             <input type="text" name="name" required>
@@ -148,16 +190,62 @@
     <!-- JavaScript -->
     <script>
 
-        // Ask the visitor for their name
+        /* -----------------------------------------
+           Personalized Welcome Message (Week 1)
+        ----------------------------------------- */
         let userName = prompt("Welcome! What is your name?");
-
-        // If the user enters a name, personalize the welcome message
         if (userName && userName.trim() !== "") {
             document.getElementById("welcomeMessage").innerHTML =
                 "Welcome, " + userName + "! Thanks for visiting my portfolio.";
         }
 
+        /* -----------------------------------------
+           Skills List (Week 2)
+        ----------------------------------------- */
+        const skills = ["HTML", "CSS", "JavaScript", "Git", "GitHub"];
+        const skillsList = document.getElementById("skillsList");
+
+        skills.forEach(skill => {
+            const li = document.createElement("li");
+            li.textContent = skill;
+            skillsList.appendChild(li);
+        });
+
+        /* -----------------------------------------
+           Conditional Logic for Featured Content
+        ----------------------------------------- */
+        const projectImages = document.querySelectorAll("#projects img");
+        const universityDiv = document.getElementById("universityResources");
+        const personalDiv = document.getElementById("personalProjects");
+
+        if (projectImages.length < 3) {
+            universityDiv.style.display = "block";
+            personalDiv.style.display = "block";
+        } else {
+            universityDiv.style.display = "none";
+        }
+
+        /* -----------------------------------------
+           Dark Mode Toggle
+        ----------------------------------------- */
+        const darkToggle = document.getElementById("darkModeToggle");
+
+        darkToggle.addEventListener("change", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+
+        /* -----------------------------------------
+           Contact Form Submit Interactivity
+        ----------------------------------------- */
+        const form = document.querySelector("#contactForm");
+        const nameField = form.querySelector("input[name='name']");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            alert(`Thank you, ${nameField.value}, your message has been sent!`);
+        });
+
     </script>
 
 </body>
-</html>
