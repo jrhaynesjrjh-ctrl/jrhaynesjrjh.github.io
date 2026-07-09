@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonathan Haynes Portfolio</title>
+    <title>Jonathan Haynes - Portfolio</title>
 
     <style>
         body {
@@ -16,46 +16,23 @@
         header {
             background-color: #333;
             color: white;
-            text-align: center;
             padding: 20px;
-        }
-
-        nav {
-            background-color: #555;
-            padding: 10px;
             text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
         }
 
         section {
-            background: white;
-            margin: 20px;
             padding: 20px;
-            border-radius: 8px;
         }
 
         img {
             width: 200px;
+            height: 120px;
             margin: 10px;
-            border-radius: 5px;
-        }
-
-        form input,
-        form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 8px;
-            margin-bottom: 15px;
+            border-radius: 8px;
         }
 
         button {
-            padding: 10px 20px;
+            padding: 10px;
             background-color: #333;
             color: white;
             border: none;
@@ -79,7 +56,6 @@
             background-color: #121212;
             color: #f1f1f1;
         }
-
         .dark-mode header {
             background-color: #000;
         }
@@ -94,29 +70,14 @@
             <input type="checkbox" id="darkModeToggle">
             Dark Mode
         </label>
-
         <h1>Jonathan Haynes</h1>
         <h2 id="welcomeMessage">Welcome to my portfolio!</h2>
     </header>
 
-    <!-- Navigation Menu -->
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-
         <p>
-            Hello! My name is Jonathan Haynes. I am currently studying software
-            development and enjoy learning about web development, Java programming,
-            databases, and user experience design.
-        </p>
-
-        <p>
+            Hello! My name is Jonathan Haynes, and I am currently studying software development.
             My goal is to become a well-rounded software developer by building
             practical projects and continuing to expand my programming skills.
         </p>
@@ -160,7 +121,6 @@
         <a href="#" target="_blank">
             <img src="https://via.placeholder.com/200x120?text=Project+3" alt="Project 3">
         </a>
-
     </section>
 
     <!-- Contact Section -->
@@ -168,23 +128,17 @@
         <h2>Contact Me</h2>
 
         <form id="contactForm">
-
             <label>Name</label>
             <input type="text" name="name" required>
 
-            <label>Email Address</label>
+            <label>Email</label>
             <input type="email" name="email" required>
 
-            <label>Subject</label>
-            <input type="text" name="subject" required>
-
             <label>Message</label>
-            <textarea rows="5" required></textarea>
+            <textarea name="message" required></textarea>
 
-            <button type="submit">Submit</button>
-
+            <button type="submit">Send Message</button>
         </form>
-
     </section>
 
     <!-- JavaScript -->
@@ -204,7 +158,6 @@
         ----------------------------------------- */
         const skills = ["HTML", "CSS", "JavaScript", "Git", "GitHub"];
         const skillsList = document.getElementById("skillsList");
-
         skills.forEach(skill => {
             const li = document.createElement("li");
             li.textContent = skill;
@@ -212,7 +165,7 @@
         });
 
         /* -----------------------------------------
-           Conditional Logic for Featured Content
+           Conditional Logic for Featured Content (Week 2)
         ----------------------------------------- */
         const projectImages = document.querySelectorAll("#projects img");
         const universityDiv = document.getElementById("universityResources");
@@ -226,26 +179,58 @@
         }
 
         /* -----------------------------------------
-           Dark Mode Toggle
+           Dark Mode Toggle (Week 2)
         ----------------------------------------- */
         const darkToggle = document.getElementById("darkModeToggle");
-
         darkToggle.addEventListener("change", () => {
             document.body.classList.toggle("dark-mode");
         });
 
         /* -----------------------------------------
-           Contact Form Submit Interactivity
+           Week 3: Dynamically Add New Content
+        ----------------------------------------- */
+        const newProjectNote = document.createElement("p");
+        newProjectNote.textContent =
+            "New Update: I am currently working on a DOM manipulation project to enhance interactivity!";
+        newProjectNote.style.fontWeight = "bold";
+        newProjectNote.style.marginTop = "10px";
+        document.querySelector("#projects").appendChild(newProjectNote);
+
+        /* -----------------------------------------
+           Week 3: Modify Existing Elements
+        ----------------------------------------- */
+        const aboutHeading = document.querySelector("#about h2");
+        aboutHeading.textContent = "About Me (Updated for Week 3)";
+        aboutHeading.style.color = "darkred";
+
+        const featuredSection = document.getElementById("featured");
+        featuredSection.style.backgroundColor = "#fff7e6";
+        featuredSection.style.padding = "20px";
+
+        /* -----------------------------------------
+           Week 3: Timed Confirmation for Contact Form
         ----------------------------------------- */
         const form = document.querySelector("#contactForm");
         const nameField = form.querySelector("input[name='name']");
 
+        const formStatus = document.createElement("p");
+        formStatus.style.fontWeight = "bold";
+        form.appendChild(formStatus);
+
         form.addEventListener("submit", (event) => {
             event.preventDefault();
 
-            alert(`Thank you, ${nameField.value}, your message has been sent!`);
+            formStatus.textContent = "Sending message...";
+            formStatus.style.color = "orange";
+
+            setTimeout(() => {
+                formStatus.textContent =
+                    `Message sent successfully, ${nameField.value}!`;
+                formStatus.style.color = "green";
+            }, 2500);
         });
 
     </script>
 
 </body>
+</html>
